@@ -28,29 +28,29 @@
   /* h1 */
   --fs-h1-d: 1.5rem;
   --fs-h1-m: 1.25rem;
-  --fs-h1: var(--fs-h1-d);
 
   --lh-h1-d: 1.75rem;
   --lh-h1-m: 1.4612rem;
-  --lh-h1: var(--lh-h1-d);
 
   --ls-h1-d: -.0187rem;
   --ls-h1-m: -0.0156rem;
-  --ls-h1: var(--ls-h1-d);
 
+  --fs-h1: var(--fs-h1-d);
+  --lh-h1: var(--lh-h1-d);
+  --ls-h1: var(--ls-h1-d);
   /* h2 */
   --fs-h2-d: 1.125rem;
   --fs-h2-m: .9375rem;
-  --fs-h2: var(--fs-h2-d);
 
   --lh-h2-d: 1.3125rem;
   --lh-h2-m: 1.25rem;
-  --lh-h2: var(--lh-h2-d);
 
   --ls-h2-d: -0.0138rem;
   --ls-h2-m: -0.0119rem;
-  --ls-h2: var(--ls-h2-d);
 
+  --fs-h2: var(--fs-h2-d);
+  --lh-h2: var(--lh-h2-d);
+  --ls-h2: var(--ls-h2-d);
   /* smaller than heading font sizes */
   --fs-milli: .875rem;
   --lh-milli: 20px;
@@ -127,7 +127,6 @@ p {
   margin-block: 1.5rem .6875rem;
 }
 
-
 .bottom-container {
   display: flex;
 }
@@ -135,7 +134,6 @@ p {
 .bottom-container h2,
 .bottom-container p {
   color: var(--white);
-
 }
 
 .bottom-container h2 {
@@ -192,4 +190,63 @@ p {
   border: 0;
   border-radius: .3125rem;
   min-height: 3rem;
+  cursor: pointer;
+}
+.bt-left-container .btn {
+  margin-block-start: 1.625rem;
+}
+
+.btn:hover {
+  color: var(--bright-yellow);
+  background-color: var(--white);
+}
+
+@media (max-width: 35rem) {
+  :root {
+    /* h1 */
+    --fs-h1: var(--fs-h1-m);
+    --lh-h1: var(--lh-h1-m);
+    --ls-h1: var(--ls-h1-m);
+    /* h2 */
+    --fs-h2: var(--fs-h2-m);
+    --lh-h2: var(--lh-h2-m);
+    --ls-h2: var(--ls-h2-m);
+  }
+
+  .card {
+    margin: 4.5rem 2rem;
+  }
+
+  .bottom-container h2 {
+    margin-block-end: 1.125rem;
+    --fs-h2: var(--fs-h2-d);
+    --lh-h2: var(--lh-h2-d);
+    --ls-h2: var(--ls-h2-d);
+  }
+
+  .top-container {
+    padding: 1.75rem 1.5rem 2rem;
+  }
+
+  .bottom-container {
+    flex-direction: column;
+  }
+
+  .bt-left-container,
+  .bt-right-container {
+    padding: 1.5rem;
+  }
+
+  .main-description {
+    font-size: var(--fs-milli);
+  }
+
+  .bt-left-container {
+    border-radius: 0;
+  }
+
+  .bt-right-container {
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+  }
+
 }
