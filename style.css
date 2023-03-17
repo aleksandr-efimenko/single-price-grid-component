@@ -2,6 +2,7 @@
 
 :root {
   --cyan: hsl(179, 62%, 43%);
+  --cyan-transparent: hsla(179, 62%, 43%, 85%);
   --bright-yellow: hsl(71, 73%, 54%);
   --light-gray: hsl(204, 43%, 93%);
   --grayish-blue: hsl(218, 22%, 67%);
@@ -51,7 +52,11 @@
   --ls-h2: var(--ls-h2-d);
 
   /* smaller than heading font sizes */
-  --fs-milli: 14px;
+  --fs-milli: .875rem;
+  --lh-milli: 20px;
+  --ls-milli: -0.0106rem;
+
+  --border-radius: .5rem;
 }
 
 
@@ -96,17 +101,10 @@ p {
   color: var(--grayish-blue);
 }
 
-.top-container h1 {
-  margin-block-end: 1.5rem;
-}
-
-.top-container h2 {
-  margin-block: 1.5rem .6875rem;
-}
 
 .card {
   box-shadow: 0px .9375rem 1.875rem hsla(212, 100%, 34%, 0.148847);
-  border-radius: .5rem;
+  border-radius: var(--border-radius);
   max-width: 39.6875rem;
 }
 
@@ -118,19 +116,80 @@ p {
 
 .top-container {
   background-color: var(--white);
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
+
+.top-container h1 {
+  margin-block-end: 1.5rem;
+}
+
+.top-container h2 {
+  margin-block: 1.5rem .6875rem;
+}
+
 
 .bottom-container {
   display: flex;
-  flex: 1;
+}
+
+.bottom-container h2,
+.bottom-container p {
+  color: var(--white);
+
 }
 
 .bottom-container h2 {
-  color: var(--white);
+  margin-block-end: 1.125rem;
 }
 
 .bt-left-container {
+  flex: 1;
   background-color: var(--cyan);
+  border-radius: 0 0 0 var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.bt-right-container {}
+.bt-right-container {
+  flex: 1;
+  background-color: var(--cyan-transparent);
+  border-radius: 0 0 var(--border-radius) 0;
+}
+
+.bt-right-container p {
+  font-size: var(--fs-milli);
+  line-height: var(--lh-milli);
+  letter-spacing: var(--ls-milli);
+  opacity: .5;
+}
+
+.price-container {
+  display: flex;
+  align-items: center;
+}
+
+.price-main {
+  font-size: var(--fs-kilo);
+  font-weight: var(--fw-heading);
+  line-height: var(--lh-kilo);
+  letter-spacing: var(--ls-kilo);
+}
+
+.price-period {
+  margin-inline-start: .6875rem;
+  opacity: 0.5;
+}
+
+.price-description {
+  margin-block-start: .25rem;
+}
+
+.btn {
+  background-color: var(--bright-yellow);
+  color: var(--white);
+  width: 100%;
+  border: 0;
+  border-radius: .3125rem;
+  min-height: 3rem;
+}
