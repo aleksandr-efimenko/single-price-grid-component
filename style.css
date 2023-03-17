@@ -1,5 +1,136 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
 
 :root {
+  --cyan: hsl(179, 62%, 43%);
+  --bright-yellow: hsl(71, 73%, 54%);
+  --light-gray: hsl(204, 43%, 93%);
+  --grayish-blue: hsl(218, 22%, 67%);
+  --white: hsla(0, 0%, 100%, 1);
+
   --ff-primary: 'Karla', sans-serif;
+
+  --fw-base: 400;
+  --fw-heading: 700;
+
+  /* base font size - applied at body / html level */
+  --fs-base: 1rem;
+  --lh-base: 1.625rem;
+  --ls-base: -0.0125rem;
+
+  /* larger than heading font */
+  --fs-kilo: 2rem;
+  --lh-kilo: 2.3381rem;
+  --ls-kilo: -0.025rem;
+
+  /* heading font */
+
+  /* h1 */
+  --fs-h1-d: 1.5rem;
+  --fs-h1-m: 1.25rem;
+  --fs-h1: var(--fs-h1-d);
+
+  --lh-h1-d: 1.75rem;
+  --lh-h1-m: 1.4612rem;
+  --lh-h1: var(--lh-h1-d);
+
+  --ls-h1-d: -.0187rem;
+  --ls-h1-m: -0.0156rem;
+  --ls-h1: var(--ls-h1-d);
+
+  /* h2 */
+  --fs-h2-d: 1.125rem;
+  --fs-h2-m: .9375rem;
+  --fs-h2: var(--fs-h2-d);
+
+  --lh-h2-d: 1.3125rem;
+  --lh-h2-m: 1.25rem;
+  --lh-h2: var(--lh-h2-d);
+
+  --ls-h2-d: -0.0138rem;
+  --ls-h2-m: -0.0119rem;
+  --ls-h2: var(--ls-h2-d);
+
+  /* smaller than heading font sizes */
+  --fs-milli: 14px;
 }
+
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  box-sizing: border-box;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-base);
+}
+
+body {
+  min-height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light-gray);
+}
+
+h1 {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-heading);
+  line-height: var(--lh-h1);
+  letter-spacing: var(--ls-h1);
+  color: var(--cyan);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-heading);
+  line-height: var(--lh-h2);
+  letter-spacing: var(--ls-h2);
+  color: var(--bright-yellow);
+}
+
+p {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-base);
+  line-height: var(--lh-base);
+  letter-spacing: var(--ls-base);
+  color: var(--grayish-blue);
+}
+
+.top-container h1 {
+  margin-block-end: 1.5rem;
+}
+
+.top-container h2 {
+  margin-block: 1.5rem .6875rem;
+}
+
+.card {
+  box-shadow: 0px .9375rem 1.875rem hsla(212, 100%, 34%, 0.148847);
+  border-radius: .5rem;
+  max-width: 39.6875rem;
+}
+
+.top-container,
+.bt-left-container,
+.bt-right-container {
+  padding: 2.5rem;
+}
+
+.top-container {
+  background-color: var(--white);
+}
+
+.bottom-container {
+  display: flex;
+  flex: 1;
+}
+
+.bottom-container h2 {
+  color: var(--white);
+}
+
+.bt-left-container {
+  background-color: var(--cyan);
+}
+
+.bt-right-container {}
